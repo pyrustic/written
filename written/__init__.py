@@ -43,8 +43,6 @@ def _write(data, dest):
         with open(temp_path, mode, encoding=encoding) as file:
             file.write(data)
             sync_file(file)
-        import time
-        time.sleep(8)
         # swap
         os.replace(temp_path, dest)
         sync.sync_dir(parent_dir)
